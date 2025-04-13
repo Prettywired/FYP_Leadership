@@ -11,7 +11,6 @@ public class OptionClicked : MonoBehaviour
     public Color selectedColor = Color.white;
     public Color dimmedColor = new Color(1f, 1f, 1f, 0.5f); // white but semi-transparent
     public Button submission;
-    int score=0;
 
     private int selectedIndex = -1;
 
@@ -44,7 +43,8 @@ public class OptionClicked : MonoBehaviour
 
 
     public void OnSubmit(){
-        score+=scores[selectedIndex];
+        Accumulated_score.score+=scores[selectedIndex];
+        Debug.Log(Accumulated_score.score);
     }
     
     void ResetChoices()
