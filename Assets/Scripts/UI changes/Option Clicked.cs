@@ -44,6 +44,7 @@ public class OptionClicked : MonoBehaviour
 
     public void OnSubmit(){
         Accumulated_score.score+=scores[selectedIndex];
+        Scene_Manager.scene+=1;
         Debug.Log(Accumulated_score.score);
     }
     
