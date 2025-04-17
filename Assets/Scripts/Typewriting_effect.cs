@@ -1,41 +1,27 @@
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System.Collections;
 using TMPro;
+using UnityEngine;
 
-public class Typewriting_effect : MonoBehaviour
+public class TypewriterEffect : MonoBehaviour
 {
-    //[SerializeField] TextMeshProGUI textMeshPro;
-    public string[] stringArray;
-    [SerializeField] float timeBetweenChars;
-    [SerializeField] float timeBetweenWords;
-    // Start is called before the first frame update
-    void Start()
+    public TMP_Text textComponent;
+    [TextArea]
+    private string fullText;
+    public float typingSpeed = 0.05f;
+
+    private void Start()
     {
-        
+        fullText = textComponent.text;
+        StartCoroutine(PlayTypewriter());
     }
 
-    void EndCheck(){
-    
-    }
-
-    private IEnumerator TextVisible(){
-        int totalVisChar= textMeshPro.textInfo.characterCount;
-        int counter=0;
-
-        while(true){
-            int visibleCount=counter% (totalVisChar +1);
-            textMeshPro.maxVisibleCharacters=visibleCount;
-
-            if(visibleCount>=totalVisChar)
-            {
-                Invoke("EndCheck", timeBetweenWords);
-                break;
-            }
-
-            counter+=1;
-            yield return new WaitForSeconds(timeBetweenChars);
+    IEnumerator PlayTypewriter()
+    {
+        textComponent.text = "";
+        foreach (char c in fullText)
+        {
+            textComponent.text += c;
+            yield return new WaitForSeconds(typingSpeed);
         }
     }
 }
-*/
