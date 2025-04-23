@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class OptionClicked : MonoBehaviour
+public class Option_Clicked : MonoBehaviour
 {
    public List<Button> choiceButtons;
-   int[] scores={5,3,7,10};
+   int[] scores={3,5,7,10};
     public Color selectedColor = Color.white;
     public Color dimmedColor = new Color(1f, 1f, 1f, 0.5f); // white but semi-transparent
     public Button submission;

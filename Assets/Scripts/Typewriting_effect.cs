@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class TypewriterEffect : MonoBehaviour
+public class Typewriting_effect : MonoBehaviour
 {
     public TMP_Text textComponent;
     [TextArea]

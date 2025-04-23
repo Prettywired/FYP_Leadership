@@ -8,5 +8,7 @@ public class Accumulated_score : MonoBehaviour
 
     public void sendScore(){
         //api call to send score
+        string jsCode= $"window.parent.postMessage({{type: 'UPDATE_LEADERSHIP_SCORE', score:{score}}}, '*');";
+        Application.ExternalEval(jsCode);
     }
 }
